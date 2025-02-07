@@ -30,15 +30,6 @@ body {
     height: calc(100vh - 70px);
 }
 
-/* .menu_container { */
-/*     flex: 8; */
-/*     background-color: #2b2b2b; */
-/*     padding: 20px; */
-/*     gap: 20px; */
-/*     display: flex; */
-/*     flex-direction: row; */
-/*     box-sizing: border-box; */
-/* } */
 .menu_container {
     flex: 8;
     background-color: #2b2b2b;
@@ -74,7 +65,7 @@ body {
     height: auto;
     min-height: 150px;
     background-color: #302521;
-    outline: 1px solid #FF4D00;
+    border: 1px solid #FF4D00;
     display: flex;
     padding: 20px;
     box-sizing: border-box;
