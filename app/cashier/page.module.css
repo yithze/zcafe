@@ -2,6 +2,7 @@
     color: #ff6700;
 }
 
+
 body {
     background-color: #2B2B2B;
     user-select: none;
@@ -221,13 +222,18 @@ body {
     flex-direction: row;
     gap: 15px;
 }
+.calc {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
 
 .total {
     font-size: 24px;
     color: #ffffff;
 }
 
-.total_after_discount {
+.total_before_discount {
     color: #777;
     text-decoration: line-through;
 }

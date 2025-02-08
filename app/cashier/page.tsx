@@ -38,7 +38,7 @@ export default function Home() {
     // Handle menu item selection
     const handleMenuClick = (menu: MenuItem) => {
         const existingOrder = orders.find(order => order.name === menu.name);
-        
+
         if (existingOrder) {
             handleQuantityChange(existingOrder.orderNumber, existingOrder.quantity + 1);
         } else {
@@ -54,7 +54,7 @@ export default function Home() {
     // Handle quantity changes in menu
     const handleMenuQuantityChange = (menuName: string, change: number) => {
         const existingOrder = orders.find(order => order.name === menuName);
-        
+
         if (existingOrder) {
             handleQuantityChange(existingOrder.orderNumber, existingOrder.quantity + change);
         } else if (change > 0) {
@@ -77,8 +77,8 @@ export default function Home() {
         } else {
             const orderItem = orders.find(order => order.orderNumber === orderNumber);
             if (orderItem && newQuantity <= menus.find(m => m.name === orderItem.name)!.stock) {
-                setOrders(orders.map(order => 
-                    order.orderNumber === orderNumber 
+                setOrders(orders.map(order =>
+                    order.orderNumber === orderNumber
                         ? { ...order, quantity: newQuantity }
                         : order
                 ));
@@ -111,7 +111,7 @@ export default function Home() {
                 returnAmount,
                 timestamp: new Date().toISOString()
             };
-            
+
             console.log('Order processed:', orderData);
             // Reset form
             setOrders([]);
@@ -149,8 +149,8 @@ export default function Home() {
                     {menus.map((menu, index) => {
                         const orderItem = orders.find(order => order.name === menu.name);
                         return (
-                            <div 
-                                key={index} 
+                            <div
+                                key={index}
                                 className={`${styles.menu} ${orderItem ? styles.menu_ordered : ''}`}
                                 onClick={() => handleMenuClick(menu)}
                             >
@@ -162,7 +162,7 @@ export default function Home() {
                                     <div className={styles.menu_stock}>Stock {menu.stock}</div>
                                 </div>
                                 <div className={styles.menu_qty}>
-                                    <button 
+                                    <button
                                         className={styles.qty_button}
                                         onClick={(e) => {
                                             e.stopPropagation();
@@ -172,7 +172,7 @@ export default function Home() {
                                     <div className={styles.qty_display}>
                                         {orderItem?.quantity || 0}
                                     </div>
-                                    <button 
+                                    <button
                                         className={styles.qty_button}
                                         onClick={(e) => {
                                             e.stopPropagation();
@@ -202,12 +202,12 @@ export default function Home() {
                                     </div>
                                 </div>
                                 <div className={styles.order_qty}>
-                                    <button 
+                                    <button
                                         className={styles.order_qty_button}
                                         onClick={() => handleQuantityChange(order.orderNumber, order.quantity + 1)}
                                     >+</button>
                                     <div className={styles.order_qty_display}>{order.quantity}</div>
-                                    <button 
+                                    <button
                                         className={styles.order_qty_button}
                                         onClick={() => handleQuantityChange(order.orderNumber, order.quantity - 1)}
                                     >-</button>
@@ -225,11 +225,17 @@ export default function Home() {
                                         Rp {total.toLocaleString()}
                                     </div>
                                     {discount > 0 && (
-                                        <div className={styles.total_after_discount}>
-                                            Rp {subtotal.toLocaleString()}
+                                        <div className={styles.calc}>
+                                            <span className={styles.total_before_discount}>
+                                                Rp {subtotal.toLocaleString()}
+                                            </span>
+                                            <span className={styles.discount_value}>
+                                                - Rp {discountAmount.toLocaleString()}
+                                            </span>
                                         </div>
                                     )}
                                 </div>
+
                                 <div className={styles.info_desc}>
                                     <p>
                                         <span className={styles.orange}>
@@ -244,7 +250,7 @@ export default function Home() {
                             <div className={styles.process_info_left}>
                                 <div className={styles.info_label}>Discount</div>
                                 <div className={styles.discount}>
-                                    <input 
+                                    <input
                                         className={styles.discount_input}
                                         type="number"
                                         value={discount}
@@ -260,7 +266,7 @@ export default function Home() {
                         <div className={styles.side_pay}>
                             <div className={styles.pay_customer}>
                                 <label htmlFor="customer">Customer</label>
-                                <input 
+                                <input
                                     className={styles.customer_input}
                                     type="text"
                                     value={customerName}
@@ -269,7 +275,7 @@ export default function Home() {
                             </div>
                             <div className={styles.pay}>
                                 <label htmlFor="payment">Pay</label>
-                                <input 
+                                <input
                                     className={styles.pay_input}
                                     type="number"
                                     value={payment}
@@ -283,13 +289,13 @@ export default function Home() {
                                 </p>
                             </div>
                             <div className={styles.pay_submit}>
-                                <button 
+                                <button
                                     className={styles.btn_cencel}
                                     onClick={handleCancel}
                                 >
                                     Cancel
                                 </button>
-                                <button 
+                                <button
                                     className={styles.btn_process}
                                     onClick={handleProcess}
                                     disabled={!orders.length || !customerName || Number(payment) < total}
