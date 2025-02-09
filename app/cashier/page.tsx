@@ -1,5 +1,6 @@
 "use client";
 
+import { toast } from 'sonner';
 import React, { useState, useEffect } from 'react';
 import styles from './page.module.css';
 
@@ -148,6 +149,49 @@ export default function Home() {
         setPayment('');
         setNextOrderNumber(1);
     };
+    const handleProcessTransaction = () => {
+    if (Number(payment) >= total) {
+        const orderData = {
+            customerName,
+            orders,
+            subtotal,
+            discount,
+            total,
+            payment: Number(payment),
+            returnAmount,
+            timestamp: new Date().toISOString(),
+        };
+
+        fetch("http://localhost:3001/datatransaksi", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(orderData),
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error("Failed to save transaction");
+                }
+                return response.json();
+            })
+            .then(() => {
+                toast.success("Transaksi berhasil diproses!");
+                setOrders([]);
+                setDiscount(0);
+                setCustomerName("");
+                setPayment("");
+                setNextOrderNumber(1);
+            })
+            .catch((error) => {
+                console.error("Error saving transaction:", error);
+                toast.error("Terjadi kesalahan saat memproses transaksi");
+            });
+    } else {
+        toast.error("Pembayaran tidak mencukupi!");
+    }
+};
+
 
     return (
         <div className={styles.page}>
@@ -320,7 +364,7 @@ export default function Home() {
                                 </button>
                                 <button
                                     className={styles.btn_process}
-                                    onClick={handleProcess}
+                                    onClick={handleProcessTransaction}
                                     disabled={!orders.length || !customerName || Number(payment) < total}
                                 >
                                     Process
