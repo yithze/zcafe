@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './page.module.css';
 
 interface MenuItem {
+    id: number;
     name: string;
     price: number;
     stock: number;
@@ -14,15 +15,18 @@ interface OrderItem extends MenuItem {
     orderNumber: number;
 }
 
-const dummyMenus: MenuItem[] = [
-    { name: "Americano", price: 70000, stock: 20 },
-    { name: "Latte", price: 75000, stock: 15 },
-    { name: "Cold Brew", price: 60000, stock: 18 },
-    { name: "Irish Coffee", price: 100000, stock: 3 },
-];
 
 export default function Home() {
-    const [menus, setMenus] = useState<MenuItem[]>(dummyMenus);
+    // const [menus, setMenus] = useState<MenuItem[]>(dummyMenus);
+    const [menus, setMenus] = useState<MenuItem[]>([]);
+    useEffect(() => {
+        // Fetch menu dari JSON Server
+        fetch("http://localhost:3001/menus")
+            .then((response) => response.json())
+            .then((data) => setMenus(data))
+            .catch((error) => console.error("Error fetching menus:", error));
+    }, []);
+
     const [orders, setOrders] = useState<OrderItem[]>([]);
     const [discount, setDiscount] = useState<number>(0);
     const [customerName, setCustomerName] = useState<string>('');
@@ -50,6 +54,18 @@ export default function Home() {
             setNextOrderNumber(prev => prev + 1);
         }
     };
+
+    useEffect(() => {
+        const totalItems = orders.reduce((sum, order) => sum + order.quantity, 0);
+        if (totalItems >= 10) {
+            setDiscount(10); // Diskon 10% buat 10 item atau lebih
+        } else if (totalItems >= 5) {
+            setDiscount(5); // Diskon 5% buat 5 item atau lebih
+        } else {
+            setDiscount(0); // Tanpa diskon kalau kurang dari 5 item
+        }
+    }, [orders]);
+
 
     // Handle quantity changes in menu
     const handleMenuQuantityChange = (menuName: string, change: number) => {
@@ -142,15 +158,19 @@ export default function Home() {
                 <a href="#">
                     <span className={styles.tray}>◉</span>Transaction
                 </a>
+                <a href="#">
+                    <span className={styles.tray}>◉</span>Menu
+                </a>
             </div>
 
             <div className={styles.main}>
                 <div className={styles.menu_container}>
-                    {menus.map((menu, index) => {
+                    {menus.map((menu) => {
                         const orderItem = orders.find(order => order.name === menu.name);
+
                         return (
                             <div
-                                key={index}
+                                key={menu.id}
                                 className={`${styles.menu} ${orderItem ? styles.menu_ordered : ''}`}
                                 onClick={() => handleMenuClick(menu)}
                             >
@@ -184,6 +204,7 @@ export default function Home() {
                         );
                     })}
                 </div>
+
 
                 <div className={styles.side}>
                     <div className={styles.side_header}>
@@ -252,11 +273,13 @@ export default function Home() {
                                 <div className={styles.discount}>
                                     <input
                                         className={styles.discount_input}
-                                        type="number"
+                                        type="text"
                                         value={discount}
                                         onChange={handleDiscountChange}
-                                        min="0"
                                         max="100"
+                                        inputMode="numeric"
+                                        readOnly
+                                        disabled
                                     />
                                     <p className={styles.discount_tray}>%</p>
                                 </div>
