@@ -27,7 +27,17 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${geistSans.variable} ${geistMono.variable}`}>
-                <Toaster />
+                {/* <Toaster /> */}
+                <Toaster
+                    toastOptions={{
+                        style: {
+                            background: "#222",
+                            color: "#f9f9f9",
+                            border: "1px solid #444",
+                        },
+                    }}
+                />
+
                 {children}
             </body>
         </html>

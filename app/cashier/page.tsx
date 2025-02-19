@@ -199,7 +199,7 @@ export default function Home() {
                 <a href="#">
                     <span className={styles.tray}>◉</span>Machine
                 </a>
-                <a href="#">
+                <a href="/transaction">
                     <span className={styles.tray}>◉</span>Transaction
                 </a>
                 <a href="#">

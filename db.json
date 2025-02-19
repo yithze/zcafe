@@ -1,241 +1,241 @@
 {
   "menus": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Americano",
       "price": 70000,
       "stock": 20
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Latte",
       "price": 75000,
       "stock": 15
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Cappuccino",
       "price": 80000,
       "stock": 10
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Espresso",
       "price": 65000,
       "stock": 25
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Mocha",
       "price": 85000,
       "stock": 18
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Flat White",
       "price": 77000,
       "stock": 12
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Macchiato",
       "price": 78000,
       "stock": 10
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Affogato",
       "price": 90000,
       "stock": 5
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Caramel Latte",
       "price": 89000,
       "stock": 14
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Vanilla Latte",
       "price": 88000,
       "stock": 16
     },
     {
-      "id": 11,
+      "id": "11",
       "name": "Cold Brew",
       "price": 95000,
       "stock": 8
     },
     {
-      "id": 12,
+      "id": "12",
       "name": "Iced Americano",
       "price": 72000,
       "stock": 20
     },
     {
-      "id": 13,
+      "id": "13",
       "name": "Iced Latte",
       "price": 76000,
       "stock": 18
     },
     {
-      "id": 14,
+      "id": "14",
       "name": "Iced Cappuccino",
       "price": 81000,
       "stock": 11
     },
     {
-      "id": 15,
+      "id": "15",
       "name": "Green Tea Latte",
       "price": 87000,
       "stock": 7
     },
     {
-      "id": 16,
+      "id": "16",
       "name": "Matcha Latte",
       "price": 89000,
       "stock": 6
     },
     {
-      "id": 17,
+      "id": "17",
       "name": "Chocolate Milk",
       "price": 80000,
       "stock": 15
     },
     {
-      "id": 18,
+      "id": "18",
       "name": "Hot Chocolate",
       "price": 85000,
       "stock": 9
     },
     {
-      "id": 19,
+      "id": "19",
       "name": "Iced Chocolate",
       "price": 87000,
       "stock": 10
     },
     {
-      "id": 20,
+      "id": "20",
       "name": "Chai Latte",
       "price": 83000,
       "stock": 5
     },
     {
-      "id": 21,
+      "id": "21",
       "name": "Hazelnut Latte",
       "price": 91000,
       "stock": 14
     },
     {
-      "id": 22,
+      "id": "22",
       "name": "Pumpkin Spice Latte",
       "price": 92000,
       "stock": 10
     },
     {
-      "id": 23,
+      "id": "23",
       "name": "Turmeric Latte",
       "price": 89000,
       "stock": 8
     },
     {
-      "id": 24,
+      "id": "24",
       "name": "Rose Latte",
       "price": 87000,
       "stock": 7
     },
     {
-      "id": 25,
+      "id": "25",
       "name": "Honey Oat Latte",
       "price": 94000,
       "stock": 12
     },
     {
-      "id": 26,
+      "id": "26",
       "name": "Irish Coffee",
       "price": 95000,
       "stock": 6
     },
     {
-      "id": 27,
+      "id": "27",
       "name": "Drip Coffee",
       "price": 78000,
       "stock": 18
     },
     {
-      "id": 28,
+      "id": "28",
       "name": "French Press",
       "price": 82000,
       "stock": 14
     },
     {
-      "id": 29,
+      "id": "29",
       "name": "Vietnamese Coffee",
       "price": 85000,
       "stock": 10
     },
     {
-      "id": 30,
+      "id": "30",
       "name": "Kopi Tubruk",
       "price": 60000,
       "stock": 25
     },
     {
-      "id": 31,
+      "id": "31",
       "name": "Kopi Susu",
       "price": 75000,
       "stock": 20
     },
     {
-      "id": 32,
+      "id": "32",
       "name": "Es Kopi Pandan",
       "price": 79000,
       "stock": 9
     },
     {
-      "id": 33,
+      "id": "33",
       "name": "Es Kopi Gula Aren",
       "price": 77000,
       "stock": 12
     },
     {
-      "id": 34,
+      "id": "34",
       "name": "Es Kopi Susu",
       "price": 75000,
       "stock": 18
     },
     {
-      "id": 35,
+      "id": "35",
       "name": "Teh Tarik",
       "price": 70000,
       "stock": 15
     },
     {
-      "id": 36,
+      "id": "36",
       "name": "Iced Tea",
       "price": 65000,
       "stock": 20
     },
     {
-      "id": 37,
+      "id": "37",
       "name": "Lemon Tea",
       "price": 72000,
       "stock": 10
     },
     {
-      "id": 38,
+      "id": "38",
       "name": "Lychee Tea",
       "price": 74000,
       "stock": 8
     },
     {
-      "id": 39,
+      "id": "39",
       "name": "Peach Tea",
       "price": 73000,
       "stock": 11
     },
     {
-      "id": 40,
+      "id": "40",
       "name": "Mango Tea",
       "price": 75000,
       "stock": 7
@@ -297,6 +297,402 @@
       "payment": 300000,
       "returnAmount": 75000,
       "timestamp": "2025-02-09T06:32:20.331Z"
+    },
+    {
+      "id": "27e1",
+      "customerName": "aaaaa",
+      "orders": [
+        {
+          "id": "1",
+          "name": "Americano",
+          "price": 70000,
+          "stock": 20,
+          "quantity": 1,
+          "orderNumber": 1
+        },
+        {
+          "id": "13",
+          "name": "Iced Latte",
+          "price": 76000,
+          "stock": 18,
+          "quantity": 1,
+          "orderNumber": 2
+        },
+        {
+          "id": "17",
+          "name": "Chocolate Milk",
+          "price": 80000,
+          "stock": 15,
+          "quantity": 1,
+          "orderNumber": 3
+        },
+        {
+          "id": "9",
+          "name": "Caramel Latte",
+          "price": 89000,
+          "stock": 14,
+          "quantity": 1,
+          "orderNumber": 4
+        },
+        {
+          "id": "18",
+          "name": "Hot Chocolate",
+          "price": 85000,
+          "stock": 9,
+          "quantity": 1,
+          "orderNumber": 5
+        }
+      ],
+      "subtotal": 400000,
+      "discount": 5,
+      "total": 380000,
+      "payment": 22222222,
+      "returnAmount": 21842222,
+      "timestamp": "2025-02-09T15:30:23.711Z"
+    },
+    {
+      "id": "b8df",
+      "customerName": "aaaaaaaa",
+      "orders": [
+        {
+          "id": "5",
+          "name": "Mocha",
+          "price": 85000,
+          "stock": 18,
+          "quantity": 1,
+          "orderNumber": 1
+        },
+        {
+          "id": "10",
+          "name": "Vanilla Latte",
+          "price": 88000,
+          "stock": 16,
+          "quantity": 1,
+          "orderNumber": 2
+        }
+      ],
+      "subtotal": 173000,
+      "discount": 0,
+      "total": 173000,
+      "payment": 333333333,
+      "returnAmount": 333160333,
+      "timestamp": "2025-02-09T15:33:18.257Z"
+    },
+    {
+      "id": "3f85",
+      "customerName": "aaaaaa",
+      "orders": [
+        {
+          "id": "9",
+          "name": "Caramel Latte",
+          "price": 89000,
+          "stock": 14,
+          "quantity": 1,
+          "orderNumber": 1
+        }
+      ],
+      "subtotal": 89000,
+      "discount": 0,
+      "total": 89000,
+      "payment": 111111111111,
+      "returnAmount": 111111022111,
+      "timestamp": "2025-02-09T15:38:51.556Z"
+    },
+    {
+      "id": "2f7d",
+      "customerName": "azhar",
+      "orders": [
+        {
+          "id": "4",
+          "name": "Espresso",
+          "price": 65000,
+          "stock": 25,
+          "quantity": 1,
+          "orderNumber": 1
+        },
+        {
+          "id": "15",
+          "name": "Green Tea Latte",
+          "price": 87000,
+          "stock": 7,
+          "quantity": 1,
+          "orderNumber": 2
+        }
+      ],
+      "subtotal": 152000,
+      "discount": 0,
+      "total": 152000,
+      "payment": 200000,
+      "returnAmount": 48000,
+      "timestamp": "2025-02-09T15:41:01.299Z"
+    },
+    {
+      "id": "d769",
+      "customerName": "azhar",
+      "orders": [
+        {
+          "id": "19",
+          "name": "Iced Chocolate",
+          "price": 87000,
+          "stock": 10,
+          "quantity": 1,
+          "orderNumber": 1
+        },
+        {
+          "id": "14",
+          "name": "Iced Cappuccino",
+          "price": 81000,
+          "stock": 11,
+          "quantity": 1,
+          "orderNumber": 2
+        },
+        {
+          "id": "13",
+          "name": "Iced Latte",
+          "price": 76000,
+          "stock": 18,
+          "quantity": 1,
+          "orderNumber": 3
+        },
+        {
+          "id": "20",
+          "name": "Chai Latte",
+          "price": 83000,
+          "stock": 5,
+          "quantity": 5,
+          "orderNumber": 4
+        },
+        {
+          "id": "30",
+          "name": "Kopi Tubruk",
+          "price": 60000,
+          "stock": 25,
+          "quantity": 1,
+          "orderNumber": 5
+        }
+      ],
+      "subtotal": 719000,
+      "discount": 5,
+      "total": 683050,
+      "payment": 900000,
+      "returnAmount": 216950,
+      "timestamp": "2025-02-09T15:43:40.183Z"
+    },
+    {
+      "id": "7cc7",
+      "customerName": "azhar",
+      "orders": [
+        {
+          "id": "1",
+          "name": "Americano",
+          "price": 70000,
+          "stock": 20,
+          "quantity": 1,
+          "orderNumber": 1
+        }
+      ],
+      "subtotal": 70000,
+      "discount": 0,
+      "total": 70000,
+      "payment": 9999999,
+      "returnAmount": 9929999,
+      "timestamp": "2025-02-10T03:59:59.177Z"
+    },
+    {
+      "id": "76d1",
+      "customerName": "azhar",
+      "orders": [
+        {
+          "id": "7",
+          "name": "Macchiato",
+          "price": 78000,
+          "stock": 10,
+          "quantity": 1,
+          "orderNumber": 1
+        },
+        {
+          "id": "12",
+          "name": "Iced Americano",
+          "price": 72000,
+          "stock": 20,
+          "quantity": 1,
+          "orderNumber": 2
+        },
+        {
+          "id": "8",
+          "name": "Affogato",
+          "price": 90000,
+          "stock": 5,
+          "quantity": 1,
+          "orderNumber": 3
+        },
+        {
+          "id": "14",
+          "name": "Iced Cappuccino",
+          "price": 81000,
+          "stock": 11,
+          "quantity": 1,
+          "orderNumber": 4
+        },
+        {
+          "id": "19",
+          "name": "Iced Chocolate",
+          "price": 87000,
+          "stock": 10,
+          "quantity": 1,
+          "orderNumber": 5
+        }
+      ],
+      "subtotal": 408000,
+      "discount": 5,
+      "total": 387600,
+      "payment": 400000,
+      "returnAmount": 12400,
+      "timestamp": "2025-02-10T04:08:20.202Z"
+    },
+    {
+      "id": "eb18",
+      "customerName": "azhar",
+      "orders": [
+        {
+          "id": "2",
+          "name": "Latte",
+          "price": 75000,
+          "stock": 15,
+          "quantity": 1,
+          "orderNumber": 1
+        },
+        {
+          "id": "3",
+          "name": "Cappuccino",
+          "price": 80000,
+          "stock": 10,
+          "quantity": 1,
+          "orderNumber": 2
+        },
+        {
+          "id": "11",
+          "name": "Cold Brew",
+          "price": 95000,
+          "stock": 8,
+          "quantity": 1,
+          "orderNumber": 4
+        },
+        {
+          "id": "7",
+          "name": "Macchiato",
+          "price": 78000,
+          "stock": 10,
+          "quantity": 1,
+          "orderNumber": 5
+        },
+        {
+          "id": "4",
+          "name": "Espresso",
+          "price": 65000,
+          "stock": 25,
+          "quantity": 1,
+          "orderNumber": 6
+        }
+      ],
+      "subtotal": 393000,
+      "discount": 5,
+      "total": 373350,
+      "payment": 400000,
+      "returnAmount": 26650,
+      "timestamp": "2025-02-10T04:28:05.062Z"
+    },
+    {
+      "id": "aa39",
+      "customerName": "aldi ",
+      "orders": [
+        {
+          "id": "9",
+          "name": "Caramel Latte",
+          "price": 89000,
+          "stock": 14,
+          "quantity": 1,
+          "orderNumber": 1
+        },
+        {
+          "id": "13",
+          "name": "Iced Latte",
+          "price": 76000,
+          "stock": 18,
+          "quantity": 1,
+          "orderNumber": 2
+        },
+        {
+          "id": "14",
+          "name": "Iced Cappuccino",
+          "price": 81000,
+          "stock": 11,
+          "quantity": 1,
+          "orderNumber": 3
+        },
+        {
+          "id": "19",
+          "name": "Iced Chocolate",
+          "price": 87000,
+          "stock": 10,
+          "quantity": 1,
+          "orderNumber": 4
+        },
+        {
+          "id": "23",
+          "name": "Turmeric Latte",
+          "price": 89000,
+          "stock": 8,
+          "quantity": 1,
+          "orderNumber": 5
+        },
+        {
+          "id": "22",
+          "name": "Pumpkin Spice Latte",
+          "price": 92000,
+          "stock": 10,
+          "quantity": 3,
+          "orderNumber": 6
+        },
+        {
+          "id": "17",
+          "name": "Chocolate Milk",
+          "price": 80000,
+          "stock": 15,
+          "quantity": 1,
+          "orderNumber": 7
+        },
+        {
+          "id": "16",
+          "name": "Matcha Latte",
+          "price": 89000,
+          "stock": 6,
+          "quantity": 1,
+          "orderNumber": 8
+        },
+        {
+          "id": "21",
+          "name": "Hazelnut Latte",
+          "price": 91000,
+          "stock": 14,
+          "quantity": 2,
+          "orderNumber": 9
+        },
+        {
+          "id": "11",
+          "name": "Cold Brew",
+          "price": 95000,
+          "stock": 8,
+          "quantity": 1,
+          "orderNumber": 10
+        }
+      ],
+      "subtotal": 1144000,
+      "discount": 10,
+      "total": 1029600,
+      "payment": 20000000,
+      "returnAmount": 18970400,
+      "timestamp": "2025-02-13T01:47:35.567Z"
     }
   ]
 }

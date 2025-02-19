@@ -330,19 +330,9 @@ body {
     flex: 8;
     padding: 10px;
     border-radius: 0;
-    background-color: #19122b;
+    background-color: #302521;
     outline: none;
-    border: 1px solid #52398e;
-    font-size: 16px;
-    height: 60px;
-}
-.btn_process {
-    flex: 8;
-    padding: 10px;
-    border-radius: 0;
-    background-color: #19122b;
-    outline: none;
-    border: 1px solid #52398e;
+    border: 1px solid #ff6700;
     font-size: 17px;
     height: 60px;
     font-weight: 700;
@@ -352,7 +342,7 @@ body {
     flex: 2;
     padding: 10px;
     border-radius: 0;
-    background-color: #210807;
+    background-color: #302121;
     outline: none;
     border: 1px solid #ff0000;
     font-size: 16px;
