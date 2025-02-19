@@ -131,14 +131,11 @@ useEffect(() => {
   return (
     <div className={styles.page}>
       <div className={styles.navbar}>
-        <a href="#">
+        <a href="/cashier">
           <span className={styles.tray}>◉</span>Machine
         </a>
         <a href="/transaction">
           <span className={styles.tray}>◉</span>Transaction
-        </a>
-        <a href="#">
-          <span className={styles.tray}>◉</span>Menu
         </a>
       </div>
 
