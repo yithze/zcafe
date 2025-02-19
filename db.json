@@ -10,7 +10,7 @@
       "id": "2",
       "name": "Latte",
       "price": 75000,
-      "stock": 2
+      "stock": 1
     },
     {
       "id": "3",
@@ -22,7 +22,7 @@
       "id": "4",
       "name": "Espresso",
       "price": 65000,
-      "stock": 24
+      "stock": 23
     },
     {
       "id": "5",
@@ -70,7 +70,7 @@
       "id": "12",
       "name": "Iced Americano",
       "price": 72000,
-      "stock": 20
+      "stock": 16
     },
     {
       "id": "13",
@@ -281,6 +281,42 @@
       "payment": 2000000,
       "returnAmount": 1217000,
       "timestamp": "2025-02-19T20:25:29.666Z"
+    },
+    {
+      "id": "627c",
+      "customerName": "azhar",
+      "orders": [
+        {
+          "id": "2",
+          "name": "Latte",
+          "price": 75000,
+          "stock": 2,
+          "quantity": 1,
+          "orderNumber": 1
+        },
+        {
+          "id": "4",
+          "name": "Espresso",
+          "price": 65000,
+          "stock": 24,
+          "quantity": 1,
+          "orderNumber": 2
+        },
+        {
+          "id": "12",
+          "name": "Iced Americano",
+          "price": 72000,
+          "stock": 20,
+          "quantity": 4,
+          "orderNumber": 3
+        }
+      ],
+      "subtotal": 428000,
+      "discount": 5,
+      "total": 406600,
+      "payment": 2000000,
+      "returnAmount": 1593400,
+      "timestamp": "2025-02-19T20:32:52.513Z"
     }
   ]
 }

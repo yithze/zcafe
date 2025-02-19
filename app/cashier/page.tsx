@@ -20,13 +20,29 @@ interface OrderItem extends MenuItem {
 export default function Home() {
     // const [menus, setMenus] = useState<MenuItem[]>(dummyMenus);
     const [menus, setMenus] = useState<MenuItem[]>([]);
+    // useEffect(() => {
+    //     // Fetch menu dari JSON Server
+    //     fetch("http://localhost:3001/menus")
+    //         .then((response) => response.json())
+    //         .then((data) => setMenus(data))
+    //         .catch((error) => console.error("Error fetching menus:", error));
+    // }, []);
     useEffect(() => {
-        // Fetch menu dari JSON Server
-        fetch("http://localhost:3001/menus")
-            .then((response) => response.json())
-            .then((data) => setMenus(data))
-            .catch((error) => console.error("Error fetching menus:", error));
-    }, []);
+    // Fetch menu dari JSON Server
+    fetch("http://localhost:3001/menus")
+        .then((response) => response.json())
+        .then((data) => {
+            // Sort biar stock 0 ada di paling bawah
+            const sortedData = data.sort((a: MenuItem, b: MenuItem) => {
+                if (a.stock === 0 && b.stock !== 0) return 1;
+                if (a.stock !== 0 && b.stock === 0) return -1;
+                return 0;
+            });
+            setMenus(sortedData);
+        })
+        .catch((error) => console.error("Error fetching menus:", error));
+}, []);
+
 
     const [orders, setOrders] = useState<OrderItem[]>([]);
     const [discount, setDiscount] = useState<number>(0);
