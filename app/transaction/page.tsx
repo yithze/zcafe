@@ -110,7 +110,7 @@ useEffect(() => {
           </table>
           <div class="invoice-summary">
             <p><strong>Subtotal:</strong> Rp${transaction.subtotal}</p>
-            <p><strong>Discount:</strong> Rp${transaction.discount}</p>
+            <p><strong>Discount:</strong> ${transaction.discount}%</p>
             <p><strong>Total:</strong> Rp${transaction.total}</p>
             <p><strong>Payment:</strong> Rp${transaction.payment}</p>
             <p><strong>Return Amount:</strong> Rp${transaction.returnAmount}</p>
@@ -168,7 +168,7 @@ useEffect(() => {
                   ))}
                 </td>
                 <td>Rp{transaction.subtotal}</td>
-                <td>Rp{transaction.discount}</td>
+                <td>{transaction.discount}%</td>
                 <td>Rp{transaction.total}</td>
                 <td>Rp{transaction.payment}</td>
                 <td>Rp{transaction.returnAmount}</td>

@@ -149,48 +149,113 @@ export default function Home() {
         setPayment('');
         setNextOrderNumber(1);
     };
-    const handleProcessTransaction = () => {
-    if (Number(payment) >= total) {
-        const orderData = {
-            customerName,
-            orders,
-            subtotal,
-            discount,
-            total,
-            payment: Number(payment),
-            returnAmount,
-            timestamp: new Date().toISOString(),
-        };
 
-        fetch("http://localhost:3001/datatransaksi", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(orderData),
-        })
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error("Failed to save transaction");
-                }
-                return response.json();
+    // const handleProcessTransaction = () => {
+    //     if (Number(payment) >= total) {
+    //         const orderData = {
+    //             customerName,
+    //             orders,
+    //             subtotal,
+    //             discount,
+    //             total,
+    //             payment: Number(payment),
+    //             returnAmount,
+    //             timestamp: new Date().toISOString(),
+    //         };
+    //
+    //         fetch("http://localhost:3001/datatransaksi", {
+    //             method: "POST",
+    //             headers: {
+    //                 "Content-Type": "application/json",
+    //             },
+    //             body: JSON.stringify(orderData),
+    //         })
+    //             .then((response) => {
+    //                 if (!response.ok) {
+    //                     throw new Error("Failed to save transaction");
+    //                 }
+    //                 return response.json();
+    //             })
+    //             .then(() => {
+    //                 toast.success("Transaksi berhasil diproses!");
+    //                 setOrders([]);
+    //                 setDiscount(0);
+    //                 setCustomerName("");
+    //                 setPayment("");
+    //                 setNextOrderNumber(1);
+    //             })
+    //             .catch((error) => {
+    //                 console.error("Error saving transaction:", error);
+    //                 toast.error("Terjadi kesalahan saat memproses transaksi");
+    //             });
+    //     } else {
+    //         toast.error("Pembayaran tidak mencukupi!");
+    //     }
+    // };
+    const handleProcessTransaction = () => {
+        if (Number(payment) >= total) {
+            const orderData = {
+                customerName,
+                orders,
+                subtotal,
+                discount,
+                total,
+                payment: Number(payment),
+                returnAmount,
+                timestamp: new Date().toISOString(),
+            };
+
+            // Proses transaksi dulu
+            fetch("http://localhost:3001/datatransaksi", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(orderData),
             })
-            .then(() => {
-                toast.success("Transaksi berhasil diproses!");
-                setOrders([]);
-                setDiscount(0);
-                setCustomerName("");
-                setPayment("");
-                setNextOrderNumber(1);
-            })
-            .catch((error) => {
-                console.error("Error saving transaction:", error);
-                toast.error("Terjadi kesalahan saat memproses transaksi");
-            });
-    } else {
-        toast.error("Pembayaran tidak mencukupi!");
-    }
-};
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error("Failed to save transaction");
+                    }
+                    return response.json();
+                })
+                .then(() => {
+                    // Update stok menu setelah transaksi berhasil
+                    const updateStockPromises = orders.map(order => {
+                        const updatedStock = menus.find(m => m.id === order.id)!.stock - order.quantity;
+                        return fetch(`http://localhost:3001/menus/${order.id}`, {
+                            method: "PATCH",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify({ stock: updatedStock }),
+                        });
+                    });
+
+                    return Promise.all(updateStockPromises);
+                })
+                .then(() => {
+                    toast.success("Transaksi berhasil diproses dan stok diperbarui!");
+                    setOrders([]);
+                    setDiscount(0);
+                    setCustomerName("");
+                    setPayment("");
+                    setNextOrderNumber(1);
+
+                    // Fetch ulang data menu buat update stok di UI
+                    return fetch("http://localhost:3001/menus")
+                        .then(response => response.json())
+                        .then(data => setMenus(data));
+                })
+                .catch((error) => {
+                    console.error("Error processing transaction:", error);
+                    toast.error("Terjadi kesalahan saat memproses transaksi");
+                });
+        } else {
+            toast.error("Pembayaran tidak mencukupi!");
+        }
+    };
+
 
 
     return (
@@ -212,9 +277,10 @@ export default function Home() {
                         return (
                             <div
                                 key={menu.id}
-                                className={`${styles.menu} ${orderItem ? styles.menu_ordered : ''}`}
-                                onClick={() => handleMenuClick(menu)}
+                                className={`${styles.menu} ${orderItem ? styles.menu_ordered : ''} ${menu.stock === 0 ? styles.menu_disabled : ''}`}
+                                onClick={() => menu.stock > 0 && handleMenuClick(menu)}
                             >
+
                                 <div className={styles.menu_info}>
                                     <div className={styles.menu_top}>
                                         <div className={styles.menu_name}>{menu.name}</div>
@@ -229,7 +295,9 @@ export default function Home() {
                                             e.stopPropagation();
                                             handleMenuQuantityChange(menu.name, 1);
                                         }}
+                                        disabled={menu.stock === 0}
                                     >+</button>
+
                                     <div className={styles.qty_display}>
                                         {orderItem?.quantity || 0}
                                     </div>
@@ -267,7 +335,9 @@ export default function Home() {
                                     <button
                                         className={styles.order_qty_button}
                                         onClick={() => handleQuantityChange(order.orderNumber, order.quantity + 1)}
+                                        disabled={order.quantity >= menus.find(m => m.id === order.id)?.stock!}
                                     >+</button>
+
                                     <div className={styles.order_qty_display}>{order.quantity}</div>
                                     <button
                                         className={styles.order_qty_button}
